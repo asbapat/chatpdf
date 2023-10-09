@@ -14,6 +14,7 @@ let pinecone : PineconeClient | null = null
 export const getPineconeClient = async () => {
   if(!pinecone){
     pinecone = new PineconeClient()
+    console.log("pinecone",process.env.PINECONE_ENVIRONMENT,process.env.PINECONE_ENVIRONMENT)
     await pinecone.init({
       environment: process.env.PINECONE_ENVIRONMENT!,
       apiKey:process.env.PINECONE_API_KEY!
